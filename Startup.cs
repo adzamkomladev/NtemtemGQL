@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NtemtemGQL.Data;
+using NtemtemGQL.GraphQL;
 
 namespace NtemtemGQL
 {
@@ -28,6 +29,8 @@ namespace NtemtemGQL
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlite
                 (_configuration.GetConnectionString("AppDbContext")));
+
+            services.AddGraphQLServer().AddQueryType<Query>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,10 +45,7 @@ namespace NtemtemGQL
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapGraphQL();
             });
         }
     }
