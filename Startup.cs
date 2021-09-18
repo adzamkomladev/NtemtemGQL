@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NtemtemGQL.Data;
 using NtemtemGQL.GraphQL;
+using HotChocolate;
 
 namespace NtemtemGQL
 {

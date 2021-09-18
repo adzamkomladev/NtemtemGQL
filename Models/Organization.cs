@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NtemtemGQL.Models
 {
-    class Organization
+    public class Organization
     {
         public int Id { get; set; }
 

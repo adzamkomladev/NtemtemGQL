@@ -5,7 +5,7 @@ using NtemtemGQL.Models;
 
 namespace NtemtemGQL.GraphQL
 {
-    class Query
+    public class Query
     {
         public IQueryable<Organization> GetOrganization([Service] AppDbContext context)
         {

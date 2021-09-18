@@ -4,7 +4,7 @@ using NtemtemGQL.Models;
 
 namespace NtemtemGQL.Data
 {
-    class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Organization> Organizations { get; set; }
 
