@@ -10,7 +10,7 @@ namespace NtemtemGQL.Models
         public int OrganizationId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Day { get; set; }
 
         [Required]
         public string StartTime { get; set; }
