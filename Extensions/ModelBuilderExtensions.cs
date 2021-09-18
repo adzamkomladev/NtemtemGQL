@@ -6,6 +6,15 @@ namespace NtemtemGQL.Extensions
 {
     public static class ModelBuilderExtensions
     {
+        public static void Relationships(this ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Organization>()
+                .HasMany(o => o.WorkPeriods)
+                .WithOne(o => o.Organization)
+                .HasForeignKey(o => o.OrganizationId);
+        }
+
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Organization>().HasData(

@@ -15,6 +15,7 @@ namespace NtemtemGQL.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Relationships();
             modelBuilder.Seed();
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NtemtemGQL.Models
@@ -20,6 +21,8 @@ namespace NtemtemGQL.Models
 
         [Required]
         public string Email { get; set; }
+
+        public ICollection<WorkPeriod> WorkPeriods { get; set; } = new List<WorkPeriod>();
 
         public DateTime CreatedAt { get; set; }
 
