@@ -42,6 +42,80 @@ namespace NtemtemGQL.Extensions
                 }
             );
 
+            modelBuilder.Entity<WorkPeriod>().HasData(
+                new WorkPeriod
+                {
+                    Id = 1,
+                    OrganizationId = 1,
+                    Day = "Monday",
+                    StartTime = "02:00",
+                    EndTime = "23:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 2,
+                    OrganizationId = 1,
+                    Day = "Tuesday",
+                    StartTime = "02:00",
+                    EndTime = "23:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 3,
+                    OrganizationId = 1,
+                    Day = "Wednesday",
+                    StartTime = "02:00",
+                    EndTime = "23:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 4,
+                    OrganizationId = 1,
+                    Day = "Thursday",
+                    StartTime = "02:00",
+                    EndTime = "23:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 5,
+                    OrganizationId = 1,
+                    Day = "Friday",
+                    StartTime = "02:00",
+                    EndTime = "23:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 6,
+                    OrganizationId = 2,
+                    Day = "Monday",
+                    StartTime = "09:00",
+                    EndTime = "17:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 7,
+                    OrganizationId = 2,
+                    Day = "Tuesday",
+                    StartTime = "09:00",
+                    EndTime = "17:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 8,
+                    OrganizationId = 2,
+                    Day = "Wednesday",
+                    StartTime = "09:00",
+                    EndTime = "17:00"
+                },
+                new WorkPeriod
+                {
+                    Id = 9,
+                    OrganizationId = 2,
+                    Day = "Thursday",
+                    StartTime = "09:00",
+                    EndTime = "14:00"
+                }
+            );
         }
     }
 }
