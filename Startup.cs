@@ -32,7 +32,10 @@ namespace NtemtemGQL
             services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlite
                 (_configuration.GetConnectionString("AppDbContext")));
 
-            services.AddGraphQLServer().AddQueryType<Query>();
+            services
+                .AddGraphQLServer()
+                .AddQueryType<Query>()
+                .AddProjections();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
