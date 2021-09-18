@@ -1,15 +1,21 @@
 using Microsoft.EntityFrameworkCore;
+using NtemtemGQL.Extensions;
 using NtemtemGQL.Models;
 
 namespace NtemtemGQL.Data
 {
     class AppDbContext : DbContext
     {
+        public DbSet<Organization> Organizations { get; set; }
+
         public AppDbContext(DbContextOptions options) : base(options)
         {
 
         }
 
-        public DbSet<Organization> Organizations { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
