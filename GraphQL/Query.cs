@@ -1,5 +1,6 @@
 using System.Linq;
 using HotChocolate;
+using HotChocolate.Data;
 using NtemtemGQL.Data;
 using NtemtemGQL.Models;
 
@@ -7,7 +8,9 @@ namespace NtemtemGQL.GraphQL
 {
     public class Query
     {
-        public IQueryable<Organization> GetOrganization([Service] AppDbContext context)
+
+        [UseDbContext(typeof(AppDbContext))]
+        public IQueryable<Organization> GetOrganizations([ScopedService] AppDbContext context)
         {
             return context.Organizations;
         }

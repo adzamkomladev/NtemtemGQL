@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using NtemtemGQL.Data;
 using NtemtemGQL.GraphQL;
 using HotChocolate;
+using GraphQL.Server.Ui.Voyager;
 
 namespace NtemtemGQL
 {
@@ -28,7 +29,7 @@ namespace NtemtemGQL
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlite
+            services.AddPooledDbContextFactory<AppDbContext>(opt => opt.UseSqlite
                 (_configuration.GetConnectionString("AppDbContext")));
 
             services.AddGraphQLServer().AddQueryType<Query>();
@@ -48,6 +49,11 @@ namespace NtemtemGQL
             {
                 endpoints.MapGraphQL();
             });
+
+            app.UseGraphQLVoyager(new VoyagerOptions()
+            {
+                GraphQLEndPoint = "/graphql"
+            }, "/graphql-voyager");
         }
     }
 }
