@@ -13,6 +13,18 @@ namespace NtemtemGQL.Extensions
                 .HasMany(o => o.WorkPeriods)
                 .WithOne(o => o.Organization)
                 .HasForeignKey(o => o.OrganizationId);
+
+            modelBuilder
+                .Entity<Organization>()
+                .HasMany(o => o.Appointments)
+                .WithOne(o => o.Organization)
+                .HasForeignKey(o => o.OrganizationId);
+
+            modelBuilder
+                .Entity<Appointment>()
+                .HasOne(o => o.Organization)
+                .WithMany(o => o.Appointments)
+                .HasForeignKey(o => o.OrganizationId);
         }
 
         public static void Seed(this ModelBuilder modelBuilder)

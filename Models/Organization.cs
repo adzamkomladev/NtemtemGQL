@@ -24,6 +24,8 @@ namespace NtemtemGQL.Models
 
         public ICollection<WorkPeriod> WorkPeriods { get; set; } = new List<WorkPeriod>();
 
+        public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set; }
