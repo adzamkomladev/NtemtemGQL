@@ -7,6 +7,7 @@ namespace NtemtemGQL.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Organization> Organizations { get; set; }
+        public DbSet<WorkPeriod> WorkPeriods { get; set; }
 
         public AppDbContext(DbContextOptions options) : base(options)
         {

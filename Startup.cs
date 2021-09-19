@@ -13,6 +13,7 @@ using NtemtemGQL.Data;
 using NtemtemGQL.GraphQL;
 using HotChocolate;
 using GraphQL.Server.Ui.Voyager;
+using NtemtemGQL.GraphQL.Organizations;
 
 namespace NtemtemGQL
 {
@@ -35,6 +36,7 @@ namespace NtemtemGQL
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
+                .AddType<OrganizationType>()
                 .AddProjections();
         }
 
