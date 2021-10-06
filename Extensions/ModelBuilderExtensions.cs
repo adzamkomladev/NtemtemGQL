@@ -38,6 +38,7 @@ namespace NtemtemGQL.Extensions
                     Address = "Achimota Hospital, Aggrey Street, Achimota",
                     Phone = "233553995074",
                     Email = "adzamkomla.dev@gmail.com",
+                    Timezone = "Africa/Accra",
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow,
                 },
@@ -49,6 +50,7 @@ namespace NtemtemGQL.Extensions
                     Address = "Arkesel, #1 Nii Oga Street",
                     Phone = "233202442452",
                     Email = "adzamkomla@gmail.com",
+                    Timezone = "Africa/Accra",
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow,
                 }
@@ -140,8 +142,9 @@ namespace NtemtemGQL.Extensions
                     ExtraInfo = "This meeting is with Dr. Philip Kpone.",
                     Reason = "This is an appointment to meet the head dematologist.",
                     Status = "SCHEDULED",
-                    StartTime = new DateTime(2021, 9, 30, 14, 30, 0),
-                    EndTime = new DateTime(2021, 9, 30, 15, 30, 0)
+                    Timezone = "Africa/Accra",
+                    StartTime = new DateTime(2021, 10, 11, 14, 30, 0),
+                    EndTime = new DateTime(2021, 10, 11, 15, 30, 0)
                 },
                 new Appointment
                 {
@@ -153,8 +156,9 @@ namespace NtemtemGQL.Extensions
                     ExtraInfo = "This meeting is with Dr. Anna Kpone.",
                     Reason = "This is an appointment to meet the head opthalmologist.",
                     Status = "SCHEDULED",
-                    StartTime = new DateTime(2021, 9, 29, 14, 0, 0),
-                    EndTime = new DateTime(2021, 9, 29, 15, 30, 0)
+                    Timezone = "Africa/Accra",
+                    StartTime = new DateTime(2021, 10, 7, 14, 0, 0),
+                    EndTime = new DateTime(2021, 10, 7, 15, 30, 0)
                 },
                 new Appointment
                 {
@@ -166,8 +170,9 @@ namespace NtemtemGQL.Extensions
                     ExtraInfo = "This meeting is with Mr. Godwin Amefia.",
                     Reason = "This is an appointment to meet the manager of operations of Arkesel.",
                     Status = "SCHEDULED",
-                    StartTime = new DateTime(2021, 9, 29, 9, 0, 0),
-                    EndTime = new DateTime(2021, 9, 29, 10, 30, 0)
+                    Timezone = "Africa/Accra",
+                    StartTime = new DateTime(2021, 10, 7, 9, 0, 0),
+                    EndTime = new DateTime(2021, 10, 7, 10, 30, 0)
                 }
             );
         }

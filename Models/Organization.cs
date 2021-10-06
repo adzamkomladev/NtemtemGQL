@@ -22,6 +22,9 @@ namespace NtemtemGQL.Models
         [Required]
         public string Email { get; set; }
 
+        [Required]
+        public string Timezone { get; set; }
+
         public ICollection<WorkPeriod> WorkPeriods { get; set; } = new List<WorkPeriod>();
 
         public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();

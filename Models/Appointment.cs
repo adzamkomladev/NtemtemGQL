@@ -24,6 +24,9 @@ namespace NtemtemGQL.Models
         public string ClientEmail { get; set; }
 
         [Required]
+        public string Timezone { get; set; }
+
+        [Required]
         public DateTime StartTime { get; set; }
 
         [Required]
