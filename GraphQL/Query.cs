@@ -10,27 +10,21 @@ namespace NtemtemGQL.GraphQL
     {
 
         [UseDbContext(typeof(AppDbContext))]
-        public IQueryable<Organization> GetOrganizations([ScopedService] AppDbContext context)
-        {
-            return context.Organizations;
-        }
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Organization> GetOrganizations([ScopedService] AppDbContext context) => context.Organizations;
 
         [UseDbContext(typeof(AppDbContext))]
-        public Organization GetOrganization([ScopedService] AppDbContext context, int id)
-        {
-            return context.Organizations.FirstOrDefault(o => o.Id == id);
-        }
+        [UseFirstOrDefault]
+        public IQueryable<Organization> GetOrganization([ScopedService] AppDbContext context, int id) => context.Organizations.Where(o => o.Id == id);
 
         [UseDbContext(typeof(AppDbContext))]
-        public IQueryable<Appointment> GetAppointments([ScopedService] AppDbContext context)
-        {
-            return context.Appointments;
-        }
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<Appointment> GetAppointments([ScopedService] AppDbContext context) => context.Appointments;
 
         [UseDbContext(typeof(AppDbContext))]
-        public Appointment GetAppointment([ScopedService] AppDbContext context, int id)
-        {
-            return context.Appointments.FirstOrDefault(a => a.Id == id);
-        }
+        [UseFirstOrDefault]
+        public IQueryable<Appointment> GetAppointment([ScopedService] AppDbContext context, int id) => context.Appointments.Where(a => a.Id == id);
     }
 }

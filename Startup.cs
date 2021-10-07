@@ -38,7 +38,9 @@ namespace NtemtemGQL
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddType<OrganizationType>()
-                .AddType<AppointmentType>();
+                .AddType<AppointmentType>()
+                .AddFiltering()
+                .AddSorting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
