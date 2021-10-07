@@ -14,6 +14,7 @@ using NtemtemGQL.GraphQL;
 using HotChocolate;
 using GraphQL.Server.Ui.Voyager;
 using NtemtemGQL.GraphQL.Organizations;
+using NtemtemGQL.GraphQL.Appointments;
 
 namespace NtemtemGQL
 {
@@ -37,7 +38,7 @@ namespace NtemtemGQL
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddType<OrganizationType>()
-                .AddProjections();
+                .AddType<AppointmentType>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

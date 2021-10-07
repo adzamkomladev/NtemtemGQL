@@ -11,20 +11,20 @@ namespace NtemtemGQL.Extensions
             modelBuilder
                 .Entity<Organization>()
                 .HasMany(o => o.WorkPeriods)
-                .WithOne(o => o.Organization)
+                .WithOne(wp => wp.Organization)
                 .HasForeignKey(o => o.OrganizationId);
 
             modelBuilder
                 .Entity<Organization>()
                 .HasMany(o => o.Appointments)
-                .WithOne(o => o.Organization)
+                .WithOne(a => a.Organization)
                 .HasForeignKey(o => o.OrganizationId);
 
             modelBuilder
                 .Entity<Appointment>()
-                .HasOne(o => o.Organization)
+                .HasOne(a => a.Organization)
                 .WithMany(o => o.Appointments)
-                .HasForeignKey(o => o.OrganizationId);
+                .HasForeignKey(a => a.OrganizationId);
         }
 
         public static void Seed(this ModelBuilder modelBuilder)
